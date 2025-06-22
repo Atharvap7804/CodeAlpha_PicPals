@@ -1,0 +1,32 @@
+.prof-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid rgb(196, 195, 195);
+  margin: 1rem auto;
+  width: 500px;         /* Set your desired width */
+  background: #fff;     /* Optional: for contrast */
+  border-radius: 16px;
+}
+.details{
+    display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.post-container{
+  display: grid;
+ grid-template-columns: 400px 400px 400px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 2rem;
+  margin: 1rem auto;
+  width: 80%;         /* Set your desired width */
+  background: #fff;     /* Optional: for contrast */
+  border-radius: 16px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/RegLog.css">
+  <link href="https://unpkg.com/cropperjs/dist/cropper.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register</h2>
+  <form class="register-form" id="register-form">
+    
+    <div class="form-group">
+      <label for="Firstname">First Name</label>
+      <input type="text" id="firstname" name="firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="Lastname">Last Name</label>
+      <input type="text" id="Lastname" name="lastname" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <input type="file" id="image" name="image" accept="image/*">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+
+    <div class="form-group">
+      <button type="submit" class="register-btn">Register</button>
+    </div>
+
+    <div id="crop-modal" style="display:none">
+      <img id="crop-preview">
+      <button id="crop-confirm">Crop</button>
+    </div>
+    <p class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </form>
+</div> 
+
+
+<script src="js/auth.js"></script>
+<script src="https://unpkg.com/cropperjs"></script>
+</body>
+</html>

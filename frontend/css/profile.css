@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+}
+body, .post-card, .modal, #profile-container {
+  font-size: 1rem;
+}
+body::-webkit-scrollbar{
+  display: none;
+  position: relative;
+}
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 0.5px solid rgb(241, 241, 241);
+}
+.logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+.nav-links a{
+  color: #222;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+}
+.nav-links button{
+  background-color: #FF006E;
+  border: none;
+  padding: 0.3px 10px;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.nav-links a:hover
+{
+ border-bottom: 1px solid #222;
+}
+.nav-links button:hover{
+  background-color: #df0161;
+  
+
+}
+/* Base styles */
+#search-panel {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+#search-panel.active {
+  left: 0;
+}
+
+#search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#update-profile-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 1rem;
+}
+#search-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#search-results .user-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.user-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-card button {
+  margin-left: auto;
+}
+
+#profile-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid rgb(196, 195, 195);
+  margin: 1rem auto;
+  width: 500px;         /* Set your desired width */
+  background: #fff;     /* Optional: for contrast */
+  border-radius: 16px;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+ 
+}
+#user-post-container {
+ display: grid;
+ grid-template-columns: 400px 400px 400px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 2rem;
+  margin: 1rem auto;
+  width: 80%;         /* Set your desired width */
+  background: #fff;     /* Optional: for contrast */
+  border-radius: 16px;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+
+.post-card img,
+.post-card video {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.post-card .caption {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.post-card .author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.like-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 16px;
+}
+.comment-btn{
+    background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 16px;
+}
+.interaction{
+  display: flex;
+  gap: 1.5rem;
+}
+.delete-post-btn{
+    background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 16px;
+}
+/* Add to your CSS file */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25);
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+}
+ #modal-comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+.comment {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.comment-time {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.modal-body{
+  margin-top: 3rem;
+}
+#close-modal{
+ position: absolute; /* Ensure it is positioned relative to the modal */
+  top: 10px; /* Adjust the distance from the top */
+  right: 10px; /* Adjust the distance from the right */
+  padding:0 5px;
+  font-size: 2rem;
+  background-color: #df0161;
+  color: #fff; /* Ensure the text is visible */
+  border: none;
+  border-radius: 3px; /* Optional: make it circular */
+  cursor: pointer;
+  z-index: 10; /* Ensure it stays above other elements */
+
+}
+#modal-comment-input{
+  border: none;
+  border-bottom: 1px solid #8f8f8f;
+  padding-bottom: 5px;
+  background: transparent;
+}
+#modal-comments-list::-webkit-scrollbar{
+  display: none;
+}
+/* Modal background */
+.follow-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content */
+.follow-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 350px;
+  width: 90vw;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  position: relative;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-follow-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.5rem;
+  color: #df0161;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.close-follow-modal:hover {
+  color: #c00;
+}
+#follow-list {
+  margin-top: 1rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.follow-user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.follow-user-row:last-child {
+  border-bottom: none;
+}
+.follow-toggle-btn {
+  background: #df0161;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 14px;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.follow-toggle-btn:hover {
+  background: #c00;
+}
+.follow-username {
+  font-weight: 500;
+  color: #222;
+}
+@media (max-width: 900px) {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+@media (max-width: 600px) {
+  #navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 0.2rem;
+  }
+  .nav-links {
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  #profile-container {
+    width: 98vw;
+    padding: 0.5rem;
+    min-width: 0;
+  }
+  .details {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  #search-panel {
+    width: 90vw;
+    min-width: 0;
+    padding: 10px;
+  }
+  #search-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #search-input {
+    font-size: 1rem;
+    padding: 6px;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .modal {
+    width: 98vw;
+    left: 1vw;
+    top: 5vw;
+    padding: 1rem;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .modal-body {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  #modal-post-preview img,
+  #modal-post-preview video {
+    max-width: 100%;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal {
+    width: 100vw;
+    left: 0;
+    top: 20%;
+    padding: 0.5rem;
+    border-radius: 0;
+  }
+  #close-modal {
+    top: 5px;
+    right: 5px;
+    font-size: 1.3rem;
+    padding: 0 6px;
+  }
+}
+@media (max-width: 600px) {
+  .modal {
+    width: 100vw;
+    left: 0;
+    top: 20%;
+    padding: 0.5rem;
+    border-radius: 0;
+  }
+  #close-modal {
+    top: 5px;
+    right: 5px;
+    font-size: 1.3rem;
+    padding: 0 6px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  #user-post-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    width: 98vw;
+  }
+}
+@media (max-width: 700px) {
+  #user-post-container {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    width: 99vw;
+    padding: 0.5rem;
+  }
+  .post-card {
+    max-width: 100vw;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  body, .post-card, .modal, #profile-container {
+    font-size: 0.92rem;
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create-Post</title>
+  <link rel="stylesheet" href="css/create-post.css">
+  <link href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
+</head>
+<body>
+  <h2>Create Post</h2>
+  <form action="" id="create-post-form" enctype="multipart/form-data">
+    <div class="post">
+    <label for="media">Upload Image or Video:</label>
+    <input type="file" id="media" name="media" accept="image/*,video/*" required>
+</div>
+<div class="caption">
+    <label for="caption">Caption:</label>
+    <textarea name="caption" id="caption" placeholder="Write your caption..." rows="10"></textarea>
+</div>
+    <div id="media-preview" style="width: 300px; height: auto; ">
+  
+    </div>
+    <button type="submit">Post</button>
+  </form>
+
+<script src="js/create-post.js"></script>
+</body>
+</html>

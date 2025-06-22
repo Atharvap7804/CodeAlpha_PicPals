@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile</title>
+   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/profile.css">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav id="navbar">
+    <div id="logo" class="logo">
+      <h2>PicPals</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i></a><span class="nav-spans">Home</span></li>
+      <li><a style="display: flex;gap: 0.5rem;justify-content: center;align-items: center;"><i
+            class="fa-solid fa-magnifying-glass" id="open-search"></i><span class="nav-spans">Search</span></a></li>
+      <div id="search-panel">
+        <div id="search-header">
+          <span>Search Users</span>
+          <button id="close-search" style="background: #df0161;color: #fff;">&times;</button>
+        </div>
+        <input type="text" name="" id="search-input" placeholder="Search by username...">
+        <div id="search-results"></div>
+      </div>
+      <li><a href="create-post.html"><i class="fa-solid fa-plus"></i><span class="nav-spans">Create Post</span></a></li>
+      <li><a href="profile.html"><i class="fa-solid fa-user"></i><span class="nav-spans">Profile</span></a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div id="profile-container">
+    <h1>Welcome,<span id="username"></span></h1>
+    <div class="details">
+      <p>Name: <span id="fullname"></span></p>
+      <div class="counts" style="display: flex;gap: 2rem;">
+        <p>Posts: <span id="total-posts"></span></p>
+        <p>Followers: <span id="followers"></span>Following: <span id="following"></span></p>
+      </div>
+    </div>
+    <button id="show-update-profile-btn" style="margin-top:10px;background-color: #df0161;border: none;color: #fff;padding: 5px 10px;border-radius: 5px;">Update Profile</button>
+    <button id="delete-account-btn" style="margin-top:10px;background-color:#c00;border:none;color:#fff;padding:5px 10px;border-radius:5px;">Delete Account</button>
+  <form id="update-profile-form" style="display:none;">
+     <input type="text" id="edit-username" placeholder="Username" style="border: none;border-bottom: 1px solid grey;padding-left: 4px;outline: none;">
+    <button type="submit" style="margin-left:10px;background-color: #df0161;border: none;color: #fff;padding: 4px 8px;border-radius: 5px;">Save</button>
+    <button type="button" id="cancel-update-profile-btn" style="margin-left:10px;background-color: #df0161;border: none;color: #fff;padding: 4px 8px;border-radius: 5px;">Cancel</button>
+  </form>
+  </div>
+  
+  <h2 style="padding-left: 2rem;text-align: center;">Your Posts</h2>
+  <div id="user-post-container"></div>
+  <div id="comment-modal" class="modal" style="display: none;">
+    <span id="close-modal">&times;</span>
+    <div class="modal-content">
+      <div class="modal-body" style="display: flex;gap: 2rem;">
+        <div id="modal-post-preview"></div>
+        <div style="flex:1">
+          <form action="" id="modal-comment-form">
+            <input type="text" id="modal-comment-input" placeholder="Add a comment.." style="width: 100%;">
+            <button
+              style="width: 100%;background-color:  #df0161;border: none;padding: 10px 15px;margin-top: 4px;border-radius: 5px;color: #fff;font-size: 1rem;"
+              type="submit">Post</button>
+          </form>
+          <div id="modal-comments-list"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<!-- Followers/Following Modal -->
+<div id="follow-modal" class="modal" style="display:none;">
+  <div class="modal-content" style="max-width:400px;margin:auto;">
+    <span id="close-follow-modal" style="float:right;cursor:pointer;">&times;</span>
+    <h3 id="follow-modal-title"></h3>
+    <div id="follow-list"></div>
+  </div>
+</div>
+  <script src="js/profile.js"></script>
+
+</body>
+
+</html>

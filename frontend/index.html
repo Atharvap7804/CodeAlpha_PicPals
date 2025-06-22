@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav id="navbar">
+     <div id="logo" class="logo">
+      <h2>PicPals</h2>
+     </div>
+     <ul class="nav-links">
+      <li><a style="display: flex;gap: 0.5rem;justify-content: center;align-items: center;"  href="index.html"><i class="fa-solid fa-house"></i><span class="nav-spans
+        ">Home</span></a></li>
+       <li><a style="display: flex;gap: 0.5rem;justify-content: center;align-items: center;"><i class="fa-solid fa-magnifying-glass" id="open-search"></i><span class="nav-spans
+        ">Search</span></a></li>
+      <div id="search-panel">
+        <div id="search-header">
+          <span>Search Users</span>
+          <button id="close-search">❌</button>
+        </div>
+        <input type="text" name="" id="search-input" placeholder="Search by username...">
+        <div id="search-results"></div>
+      </div>
+      <li><a href="create-post.html"><i class="fa-solid fa-plus"></i><span class="nav-spans
+        "> Create Post </span></a></li>
+      <li><a href="profile.html"><i class="fa-solid fa-user"></i><span class="nav-spans
+        ">Profile</span></a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+     </ul>
+  </nav>
+
+  
+
+<div id="feed-container" class="feed-center"></div>
+
+
+ <div id="comment-modal" class="modal" style="display: none;">
+    <span id="close-modal">&times;</span>
+    <div class="modal-content">
+      <div class="modal-body" style="display: flex;gap: 2rem;">
+        <div id="modal-post-preview"></div>
+        <div style="flex:1">
+          <form action="" id="modal-comment-form">
+            <input type="text" id="modal-comment-input" placeholder="Add a comment.." style="width: 100%;">
+            <button style="width: 100%;background-color:  #df0161;border: none;padding: 10px 15px;margin-top: 4px;border-radius: 5px;color: #fff;font-size: 1rem;" type="submit">Post</button>
+          </form>
+          <div id="modal-comments-list"></div>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="js/home.js"></script>
+</body>
+</html>
