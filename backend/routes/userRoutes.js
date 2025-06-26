@@ -82,5 +82,6 @@ router.get('/following/:userId', authMiddleware, async (req, res) => {
   }));
   res.json(list);
 });
+router.post('/forgot-password', userController.forgotPassword);
 
 module.exports = router;

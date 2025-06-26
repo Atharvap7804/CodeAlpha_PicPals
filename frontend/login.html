@@ -24,10 +24,37 @@
       <button type="submit" class="login-btn">Login</button>
     </div>
 
+    <div class="form-group">
+      <a href="#" id="forgot-password-link">Forgot Password?</a>
+    </div>
+
     <p class="register-link">
       Do not have an account? <a href="register.html">Register here</a>
     </p>
   </form>
+
+  <!-- Modal Overlay for Forgot Password -->
+  <div id="forgot-password-overlay">
+    <form class="login-form" id="forgot-password-form">
+      <div style="position: absolute; top: 12px; right: 18px; cursor: pointer; font-size: 1.5rem; color: #888; z-index: 1020;" id="forgot-close-btn" title="Close">&times;</div>
+      <h3>Reset Password</h3>
+      <div class="form-group">
+        <label for="forgot-email">Email</label>
+        <input type="email" id="forgot-email" name="forgot-email" required>
+      </div>
+      <div class="form-group">
+        <label for="forgot-new-password">New Password</label>
+        <input type="password" id="forgot-new-password" name="forgot-new-password" required>
+      </div>
+      <div class="form-group">
+        <label for="forgot-confirm-password">Confirm New Password</label>
+        <input type="password" id="forgot-confirm-password" name="forgot-confirm-password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="login-btn">Reset Password</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="js/auth.js"></script>

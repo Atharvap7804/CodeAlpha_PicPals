@@ -156,6 +156,89 @@ body {
   color: #ca0057;
 }
 
+/* Modal overlay for forgot password */
+#forgot-password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+body.forgot-active #forgot-password-overlay {
+  display: flex !important;
+}
+
+#forgot-password-form {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  z-index: 1010;
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: block;
+}
+
+#forgot-password-form h3 {
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#forgot-password-form .form-group label {
+  font-size: 1rem;
+  color: #222;
+}
+
+#forgot-password-form .form-group input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  transition: border 0.3s;
+}
+#forgot-password-form .form-group input:focus {
+  border: 1.5px solid #3A86FF;
+}
+
+#forgot-password-form .login-btn {
+  background: #3A86FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+}
+#forgot-password-form .login-btn:hover {
+  background: #0d69fe;
+}
+
+/* Remove blur/dim from login-container */
+body.forgot-active .login-container {
+  filter: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+#forgot-password-form {
+  display: none;
+}
+
+body.forgot-active #forgot-password-form {
+  display: block !important;
+}
 
 @media (max-width: 900px) {
   .register-container,
